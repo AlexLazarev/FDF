@@ -6,7 +6,7 @@
 #    By: alazarev <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/09 15:31:29 by alazarev          #+#    #+#              #
-#    Updated: 2018/04/10 13:10:26 by alazarev         ###   ########.fr        #
+#    Updated: 2018/04/18 13:00:54 by alazarev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJ_DIR = ./objects/
 INC_DIR = ./includes/
 LIB_DIR = ./lib/
 
-SRC = main.c parser.c get_next_line.c draw.c\
+SRC = main.c parser.c get_next_line.c draw.c check_key.c mouse.c info_table.c\
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
@@ -32,7 +32,7 @@ HEADER_FLAGS = -I $(INC_DIR) -I $(LIBFT_INC)
 
 MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
 CC_FLAGS = 
-CC = gcc -g 
+CC = gcc
 
 all: $(NAME)
 

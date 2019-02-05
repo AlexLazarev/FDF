@@ -6,47 +6,59 @@
 /*   By: alazarev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 16:16:28 by alazarev          #+#    #+#             */
-/*   Updated: 2018/03/26 20:10:25 by alazarev         ###   ########.fr       */
+/*   Updated: 2018/04/17 20:37:15 by alazarev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_itoasplit(char *str, int n)
+static	int		ft_memitoa(int nbr)
 {
-	int		sign;
+	int		iter;
 
-	sign = 1;
-	if (n < 0)
-		sign = -1;
-	while (n)
+	iter = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr == -2147483648)
+		return (11);
+	if (nbr < 0)
 	{
-		*str = (sign * (n % 10)) + 48;
-		*(++str) = (char)malloc(sizeof(char));
-		n /= 10;
+		nbr *= -1;
+		iter++;
 	}
-	return (str);
+	while (nbr > 0)
+	{
+		nbr /= 10;
+		iter++;
+	}
+	return (iter);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*begin;
-	char	*str;
+	char	*res;
+	int		iter;
+	int		minus;
 
-	if (!(str = (char*)malloc(sizeof(char) * 1)))
+	iter = 1;
+	iter = ft_memitoa(n);
+	if ((minus = 0) == 0 && n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (!(res = (char*)malloc(sizeof(char) * (iter + 1))))
 		return (0);
-	begin = str;
-	if (n == 0)
-	{
-		*str = '0';
-		*(++str) = (char)malloc(sizeof(char));
-	}
-	str = ft_itoasplit(str, n);
+	res[iter--] = '\0';
 	if (n < 0)
 	{
-		*str = '-';
-		*(++str) = (char)malloc(sizeof(char));
+		res[0] = '-';
+		n *= -1;
+		minus = 1;
 	}
-	*str = 0;
-	return (ft_strrvrs(begin));
+	while (iter >= minus)
+	{
+		res[iter--] = n % 10 + '0';
+		n /= 10;
+	}
+	return (res);
 }

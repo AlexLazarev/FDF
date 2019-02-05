@@ -6,7 +6,7 @@
 #    By: alazarev <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/27 19:20:16 by alazarev          #+#    #+#              #
-#    Updated: 2018/04/09 15:30:41 by alazarev         ###   ########.fr        #
+#    Updated: 2018/04/16 15:00:14 by alazarev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC = ft_bzero.c ft_memcpy.c ft_memccpy.c ft_strcpy.c ft_strcat.c ft_strchr.c \
 	  ft_putnbr_fd.c ft_strsplit.c ft_memmove.c ft_strdup.c ft_tolower.c \
 	  ft_toupper.c ft_isdigit.c ft_isalnum.c ft_isalpha.c ft_itoa.c ft_memset.c \
 	  ft_lstnew.c ft_lstdelone.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-	  ft_lstdel.c ft_strnsplit.c ft_strrvrs.c ft_strrealloc.c
+	  ft_lstdel.c ft_strnsplit.c ft_strrvrs.c ft_strrealloc.c ft_error.c \
+	  ft_atoi_base.c \
 
 OBJ = $(SRC:.c=.o)
 

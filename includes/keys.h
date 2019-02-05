@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keys.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alazarev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/17 20:39:10 by alazarev          #+#    #+#             */
+/*   Updated: 2018/04/17 20:39:12 by alazarev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef _KEYS_H
 # define _KEYS_H
 # define KEY_A 0
@@ -46,4 +58,10 @@
 # define KEY_RIGHT 124
 # define KEY_DOWN 125
 # define KEY_UP 126
+# define KEY_ESC 53
+# define KEY_SPACE 49
+# define MOUSE_SCROLL_UP 5
+# define MOUSE_SCROLL_DOWN 4
+# define MOUSE_KEY_LEFT 1
+# define MOUSE_KEY_RIGHT 2
 #endif

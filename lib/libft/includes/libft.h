@@ -63,8 +63,12 @@ char			**ft_strsplit(char const *s, char c);
 size_t			ft_strnsplit(char const *s, char c);
 char			*ft_strrvrs(char const *s);
 char			*ft_strrealloc(char **s, size_t len);
+size_t			ft_strarrlen(char **s);
+char			**ft_strarrdup(char **s);
+void			ft_strarrfree(char **s);
 char			*ft_itoa(int n);
 
+int				ft_atoi_base(const char *str, int str_base);
 int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -90,4 +94,5 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+void			ft_error(char *str);
 #endif
